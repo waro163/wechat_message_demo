@@ -1,0 +1,13 @@
+RUN_ENV: dev
+LOG_PATH: "/var/log"
+LOG_FILENAME: "gin_demo.log"
+
+APP_ID: "wx210e40ea182c82dd"
+APP_SECRET: "e768cba16bf6b9196fdab2c0170fa30e"
+TOKEN: p5wDTovkLe
+AES_KEY: yOCdIm0cGOGNY9I1eoz2amFsOy8pEgGAkdpuzLcpiKn
+
+REDIS_HOST: localhost
+REDIS_PORT: "6379"
+REDIS_PASS: "123456"
+REDIS_DB: "0"
