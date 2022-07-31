@@ -22,7 +22,10 @@ var conf = &config.Config{
 	Cache:          memory,
 }
 
-var mp = oa.NewOfficialAccount(conf)
+var (
+	mp   = oa.NewOfficialAccount(conf)
+	auth = mp.GetOauth()
+)
 
 func handleMsg(*message.MixMessage) *message.Reply {
 	return nil
