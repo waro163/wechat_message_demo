@@ -27,6 +27,15 @@ var (
 	auth = mp.GetOauth()
 )
 
-func handleMsg(*message.MixMessage) *message.Reply {
+func handleMsg(mm *message.MixMessage) *message.Reply {
+	if mm.MsgType == "text" {
+		if mm.Content == "人工" {
+			data := message.NewText("")
+			return &message.Reply{MsgType: message.MsgTypeTransfer, MsgData: data}
+		} else {
+			data := message.NewText(mm.Content)
+			return &message.Reply{MsgType: message.MsgTypeText, MsgData: data}
+		}
+	}
 	return nil
 }

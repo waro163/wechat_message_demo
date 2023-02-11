@@ -5,6 +5,7 @@ import (
 	_ "wechat_demo/config"
 	_ "wechat_demo/log"
 	"wechat_demo/wechat"
+	wechatmsg "wechat_demo/wechat-msg"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,6 +22,8 @@ func main() {
 
 	mp := router.Group("/api/v1/wechat")
 	wechat.RegisterRouter(mp)
+	event := router.Group("/api/v1/wechatmsg")
+	wechatmsg.RegisterRouter(event)
 
 	router.Run(":8080")
 }
